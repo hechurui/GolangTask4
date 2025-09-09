@@ -10,6 +10,8 @@ import (
 	"gorm.io/gorm/logger"
 )
 
+var DB *gorm.DB
+
 // InitDB 初始化数据库连接
 func InitDB() (*gorm.DB, error) {
 	// 加载环境变量
@@ -22,12 +24,12 @@ func InitDB() (*gorm.DB, error) {
 		os.Getenv("DB_NAME") + "?charset=" + os.Getenv("DB_CHARSET") + "&parseTime=True&loc=Local"
 
 	// 连接数据库
-	db, err := gorm.Open(mysql.Open(dbStr), &gorm.Config{
+	DB, err := gorm.Open(mysql.Open(dbStr), &gorm.Config{
 		Logger: logger.Default.LogMode(logger.Info), // 日志模式
 	})
 	if err != nil {
 		return nil, err
 	}
 
-	return db, nil
+	return DB, nil
 }
