@@ -22,7 +22,7 @@ func SetupRoutes(router *gin.Engine) {
 		public.GET("/posts/:id", handlers.GetPost)
 
 		// 评论路由（公开访问）
-		public.GET("/posts/:postId/comments", handlers.GetPostComments)
+		public.GET("/posts/:id/comments", handlers.GetPostComments)
 	}
 
 	// 需要认证的路由
@@ -35,6 +35,6 @@ func SetupRoutes(router *gin.Engine) {
 		protected.DELETE("/posts/:id", handlers.DeletePost)
 
 		// 评论路由（需要认证）
-		protected.POST("/posts/:postId/comments", handlers.CreateComment)
+		protected.POST("/posts/:id/comments", handlers.CreateComment)
 	}
 }

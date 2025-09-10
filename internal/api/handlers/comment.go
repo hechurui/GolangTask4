@@ -48,7 +48,7 @@ func CreateComment(c *gin.Context) {
 
 // 获取文章的评论
 func GetPostComments(c *gin.Context) {
-	postID := c.Param("postId")
+	postID := c.Param("id")
 	var comments []domain.Comment
 
 	if err := database.DB.Where("post_id = ?", postID).Preload("User").Find(&comments).Error; err != nil {

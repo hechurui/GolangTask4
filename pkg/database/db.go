@@ -24,7 +24,8 @@ func InitDB() (*gorm.DB, error) {
 		os.Getenv("DB_NAME") + "?charset=" + os.Getenv("DB_CHARSET") + "&parseTime=True&loc=Local"
 
 	// 连接数据库
-	DB, err := gorm.Open(mysql.Open(dbStr), &gorm.Config{
+	var err error
+	DB, err = gorm.Open(mysql.Open(dbStr), &gorm.Config{
 		Logger: logger.Default.LogMode(logger.Info), // 日志模式
 	})
 	if err != nil {
