@@ -47,6 +47,7 @@ go mod tidy
 go run main.go
 ```
 
+服务器将在 `http://localhost:7777` 启动
 
 
 # API 接口文档
