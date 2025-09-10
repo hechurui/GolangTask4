@@ -49,19 +49,19 @@ go run main.go
 
 
 
-## API 接口文档
+# API 接口文档
 系统提供的 API 接口如下：
 
-# 用户认证
-POST /api/register - 用户注册
-POST /api/login - 用户登录
-# 文章管理
-GET /api/posts - 获取所有文章
-GET /api/posts/:id - 获取单篇文章
-POST /api/posts - 创建文章（需要认证）
-PUT /api/posts/:id - 更新文章（需要认证，仅作者）
-DELETE /api/posts/:id - 删除文章（需要认证，仅作者）
-# 评论功能
-GET /api/posts/:id/comments - 获取文章的所有评论
-POST /api/posts/:id/comments - 创建评论（需要认证）
+## 用户认证
+- POST /api/register - 用户注册
+- POST /api/login - 用户登录
+## 文章管理
+- GET /api/posts - 获取所有文章
+- GET /api/posts/:id - 获取单篇文章
+- POST /api/posts - 创建文章（需要认证）
+- PUT /api/posts/:id - 更新文章（需要认证，仅作者）
+- DELETE /api/posts/:id - 删除文章（需要认证，仅作者）
+## 评论功能
+- GET /api/posts/:id/comments - 获取文章的所有评论
+- POST /api/posts/:id/comments - 创建评论（需要认证）
 
